@@ -1,3 +1,0 @@
-this is a sample text
-this is a new line
-not a new line

@@ -1,3 +1,2 @@
-this is a sample text
-this is a new line
-not a new line
+THIS IS A now new text that will be added to  TEXT file
+ Previous text stays with this also included

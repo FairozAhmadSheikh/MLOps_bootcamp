@@ -1,2 +1,2 @@
-THIS IS A now new text that will be added to  TEXT file
- Previous text stays with this also included
+This is a text new as fresh 
+This is a  new  line added  

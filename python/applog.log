@@ -1,0 +1,4 @@
+2026 -02 -07  13:39:19 Arithamtic app DEBUG  adding 10 + 15 : 25
+2026 -02 -07  13:39:52 Arithamtic app DEBUG  subtracting 10 - 15: -5
+2026 -02 -07  13:40:14 Arithamtic app ERROR  Zero Division error 
+2026 -02 -07  13:40:36 Arithamtic app DEBUG  dividing 10 / 10 : 1.0

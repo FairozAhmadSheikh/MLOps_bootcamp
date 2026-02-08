@@ -35,7 +35,10 @@ def form():
 def score(score):
     return f'You got the '+score+" Marks"
 
-
+# 
+@app.route('/strictrule/<int:score>')
+def strictrule(score):
+    return f'This is now strictly integer not a string : '+str(score)
 if __name__=="__main__":
     app.run(debug=True)
 

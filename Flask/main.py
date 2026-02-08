@@ -27,6 +27,14 @@ def form():
     else:
         return render_template("form.html")
 
+# Building URL Dynamically JinjA 2 Template engine and variable rule
+
+
+# variable rules
+@app.route("/sucess/<score>")
+def score(score):
+    return f'You got the '+score+" Marks"
+
 
 if __name__=="__main__":
     app.run(debug=True)

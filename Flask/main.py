@@ -19,10 +19,11 @@ def load_temp():
     return render_template("loaded.html")
 
 # GET VS POST
-@app.route("/form",method=["GET",'POST'])
+@app.route("/form",methods=["GET",'POST'])
 def form():
     if request.method=='POST':
-        pass
+        name=request.form['name']
+        return f"Hello {name} "
     else:
         return render_template("form.html")
 

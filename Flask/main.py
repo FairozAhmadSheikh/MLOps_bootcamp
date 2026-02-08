@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 
 app=Flask(__name__)
 
@@ -17,6 +17,15 @@ def homepage():
 @app.route("/load_from_template")
 def load_temp():
     return render_template("loaded.html")
+
+# GET VS POST
+@app.route("/form",method=["GET",'POST'])
+def form():
+    if request.method=='POST':
+        pass
+    else:
+        return render_template("form.html")
+
 
 if __name__=="__main__":
     app.run(debug=True)

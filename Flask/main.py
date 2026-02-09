@@ -50,6 +50,17 @@ def results(score):
     else:
         result ="You failed"
     return render_template("results.html",results=score , res=result)
+
+# Passing an expression (dictionary)
+@app.route('/successres/<int:score>')
+def successres(score):
+    res =""
+    if score>=33:
+        res="You passed"
+    else:
+        res="You failed"
+    exp={"score":score,"result":res}
+    render_template("expression_pass.html",exp=exp)
 if __name__=="__main__":
     app.run(debug=True)
 

@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    {% for key,val in exp.items %}
-    <h1>you got {key} marks and {va}</h1>
+    {% for key,val in exp.items() %}
+    <h1>you got {{key}} : {{val}}</h1>
     {% endfor %}
 </body>
 </html>

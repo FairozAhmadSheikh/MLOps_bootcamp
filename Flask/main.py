@@ -56,11 +56,11 @@ def results(score):
 def successres(score):
     res =""
     if score>=33:
-        res="You passed"
+        res="passed"
     else:
-        res="You failed"
+        res="failed"
     exp={"score":score,"result":res}
-    render_template("expression_pass.html",exp=exp)
+    return render_template("expression_pass.html",exp=exp)
 if __name__=="__main__":
     app.run(debug=True)
 

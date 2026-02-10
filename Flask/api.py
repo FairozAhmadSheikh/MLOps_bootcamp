@@ -14,9 +14,19 @@ items=[
 def home():
     return "Welcome to the todo app"
 
+# Get all items at once
 @app.route('/items')
 def items():
     return jsoinfy(items)
+
+# Get items at  using id
+@app.route('/items/<int:item_id>')
+def get_score(item_id):
+    item=next((item for item in items if item["id"]==item_id  ),None)
+    if item is None:
+        return jsoinfy({"error":"item not found"})
+    else:
+        return jsoinfy(items)
 
 
 

@@ -14,7 +14,9 @@ items=[
 def home():
     return "Welcome to the todo app"
 
-
+@app.route('/items')
+def items():
+    return jsoinfy(items)
 
 
 

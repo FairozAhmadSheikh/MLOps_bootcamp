@@ -1,7 +1,7 @@
 # Lets now work with api's 
 # building a todo list
 
-from flask import Flask,jsoinfy,request
+from flask import Flask,jsonify,request
 
 app=Flask(__name__)
 
@@ -17,22 +17,22 @@ def home():
 # Get :all items at once
 @app.route('/items')
 def items():
-    return jsoinfy(items)
+    return jsonify(items)
 
 # Get :items at  using id
 @app.route('/items/<int:item_id>')
 def get_score(item_id):
     item=next((item for item in items if item["id"]==item_id  ),None)
     if item is None:
-        return jsoinfy({"error":"item not found"})
+        return jsonify({"error":"item not found"})
     else:
-        return jsoinfy(items)
+        return jsonify(items)
 
 # POST: Create a new Task 
 @app.route('/items',methods=['POST'])
 def create_item():
     if not request.json or not 'name' in request.json:
-        return jsoinfy({"error":"item not found"})
+        return jsonify({"error":"item not found"})
     else:
         new_item={
             "id":items[-1]["id"]+1 ,
@@ -40,7 +40,7 @@ def create_item():
             "description":request.json['description']
         }
         items.append(new_item)
-        return jsoinfy(new_item)
+        return jsonify(new_item)
 
 
 if __name__=="__main__":

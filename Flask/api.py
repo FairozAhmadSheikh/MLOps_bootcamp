@@ -14,12 +14,12 @@ items=[
 def home():
     return "Welcome to the todo app"
 
-# Get all items at once
+# Get :all items at once
 @app.route('/items')
 def items():
     return jsoinfy(items)
 
-# Get items at  using id
+# Get :items at  using id
 @app.route('/items/<int:item_id>')
 def get_score(item_id):
     item=next((item for item in items if item["id"]==item_id  ),None)
@@ -28,7 +28,19 @@ def get_score(item_id):
     else:
         return jsoinfy(items)
 
-
+# POST: Create a new Task 
+@app.route('/items',methods=['POST'])
+def create_item():
+    if not request.json or not 'name' in request.json:
+        return jsoinfy({"error":"item not found"})
+    else:
+        new_item={
+            "id":items[-1]["id"]+1 ,
+            "name":request.json["name"],
+            "description":request.json['description']
+        }
+        items.append(new_item)
+        return jsoinfy(new_item)
 
 
 if __name__=="__main__":

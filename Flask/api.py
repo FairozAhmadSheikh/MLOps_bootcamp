@@ -48,7 +48,10 @@ def update_item(item_id):
     item=next((item for item in items if item['id']==item_id),None)
     if item==None:
         return jsonify({"error":"Item not found"})
-    
+    else:
+        item['name']=request.json('name',item['name'])
+        item['description']=request.json('description',item['description'])
+        return jsonify({"result":"Item Updated"})
 
 
 if __name__=="__main__":

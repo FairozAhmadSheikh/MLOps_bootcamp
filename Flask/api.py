@@ -54,7 +54,7 @@ def update_item(item_id):
         return jsonify({"result":"Item Updated"})
     
 # Delete 
-@app.route('items/<int:item_id>',methods=['DELETE'])
+@app.route('/items/<int:item_id>',methods=['DELETE'])
 def delete_item(item_id):
     global items
     items=[item for item in items if item['id'] != item_id]
